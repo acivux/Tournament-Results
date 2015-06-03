@@ -1,10 +1,4 @@
 -- Table definitions for the tournament project.
---
--- Put your SQL 'create table' statements in this file; also 'create view'
--- statements if you choose to use it.
---
--- You can write comments in this file by starting them with two dashes, like
--- these lines here.
 
 -- Players.
 CREATE TABLE player (
@@ -37,7 +31,7 @@ CREATE TABLE tournament_players (
     p_id INT REFERENCES player (id)
 );
 
--- View of the winning players ordered by most won
+-- View of the winning players ordered by most won.
 CREATE VIEW winner_table AS
     SELECT
         winner_id,
@@ -46,7 +40,7 @@ CREATE VIEW winner_table AS
      GROUP BY winner_id
      ORDER BY wins DESC;
 
--- View of the losing players ordered by most lost
+-- View of the losing players ordered by most lost.
 CREATE VIEW loser_table AS
     SELECT
         loser_id,

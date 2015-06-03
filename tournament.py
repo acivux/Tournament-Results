@@ -274,7 +274,7 @@ def report_match(tournament_id, winner, loser):
 
 
 def match_history(tournament_id):
-    """Returns a list of pairs of players of previous matches in the
+    """Returns a list of unique pairs of players of previous matches in the
     tournament.
 
     Args:
@@ -296,19 +296,12 @@ def match_history(tournament_id):
                     ON tournament_matches.m_id = matches.id
                 WHERE
                     loser_id is not null
-                    and tournament_matches.t_id = %s;
+                    and tournament_matches.t_id = %s
+                    and winner_id < loser_id;
               """
         curs = db.cursor()
         curs.execute(sql, (tournament_id,))
-        query_rows = curs.fetchall()
-
-        # Make sure to report only unique combinations.
-        result = []
-        for x in query_rows:
-            tt = (x[1], x[0])
-            if x not in result and tt not in result:
-                result.append(x)
-        return result
+        return curs.fetchall()
     except psycopg2.DatabaseError, e:
         print 'Error %s' % e
     finally:
