@@ -405,10 +405,10 @@ def swiss_pairings(tournament_id):
         right_id = p[1]
         left_name = [x[1] for x in standings if x[0] == left_id][0]
         #  If a bye match, the player on the right will be None
+        right_name = None
         if right_id:
             right_name = [x[1] for x in standings if x[0] == right_id][0]
-        else:
-            right_name = None
+
         t = (left_id, left_name, right_id, right_name)
         final_pairing.append(t)
 
