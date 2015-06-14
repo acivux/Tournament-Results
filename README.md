@@ -4,7 +4,7 @@
 - Download the files from https://github.com/acivux/Tournament-Results
 - Copy all the project files into the same folder.
 
-######Setting up the PostgreSQL Database 
+#####Setting up the PostgreSQL Database 
 Make sure PostgreSQL is  installed and functions. See the [installation](http://www.postgresql.org/docs/9.4/interactive/tutorial-install.html) instructions.
 
 Open the *psql* command line tool, making sure the current working directory is the same directory where this project is saved.
