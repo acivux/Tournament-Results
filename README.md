@@ -7,7 +7,7 @@
 #####Setting up the PostgreSQL Database 
 Make sure PostgreSQL is  installed and functions. See the [installation](http://www.postgresql.org/docs/9.4/interactive/tutorial-install.html) instructions.
 
-Open the *psql* command line tool, making sure the current working directory is the same directory where this project is saved.
+Run the *psql* command line tool, making sure the current working directory is the same directory where this project is saved.
 
 Create a new database called "tournament"
 
@@ -21,7 +21,7 @@ Set up the tables defined in tournament.sql by using the `\include` statement:
 
 ```\include tournament.sql```
 
-The tournament database should now be set up for testing.
+The tournament database should now be set up for testing. You may close the psql command line tool.
 
 ######Run the Test 
 - Run `tournament_test.py`
